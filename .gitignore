@@ -1,0 +1,68 @@
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.settings/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Temporary Files
+*.tmp
+*.temp
+.cache/
+
+# Environment Files
+.env
+.env.local
+.env.*.local
+
+# Build Output (if any)
+dist/
+build/
+*.bundle.js
+*.bundle.css
+
+# Node Modules (if using npm for tools)
+node_modules/
+
+# Backup Files
+*.bak
+*.backup
+*-backup.*
+
+# macOS
+.AppleDouble
+.LSOverride
+Icon
+
+# Windows
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+# Testing
+coverage/
+.nyc_output/
+
+# IDE
+*.sublime-project
+*.sublime-workspace
+
+# Don't ignore these files
+!.htaccess
+!robots.txt
+
