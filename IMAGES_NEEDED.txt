@@ -1,0 +1,83 @@
+IMAGES NEEDED FOR SEO AND BRANDING
+======================================
+
+For optimal SEO and user experience, create the following images:
+
+1. FAVICON (Required)
+   - favicon.ico (16x16, 32x32, 48x48)
+   - Place in root directory
+   - Recommended: Simple "C" or lightning bolt icon in blue
+
+2. OPEN GRAPH IMAGE (Highly Recommended)
+   - og-image.jpg (1200x630px)
+   - Used for social media sharing (Facebook, LinkedIn, etc.)
+   - Should include:
+     * Site name: "ConduitCalculator.xyz"
+     * Tagline: "NEC-Compliant Conduit Fill Calculator"
+     * Visual: Electrical conduit or wire illustration
+     * Blue/purple gradient background
+
+3. TWITTER CARD IMAGE (Recommended)
+   - twitter-card.jpg (1200x600px)
+   - Similar to OG image but optimized for Twitter
+   - Can use same image as og-image.jpg
+
+4. PWA ICONS (For Progressive Web App)
+   - icon-192.png (192x192px)
+   - icon-512.png (512x512px)
+   - Should be simple, recognizable icon
+   - Use blue (#2563eb) as primary color
+   - Lightning bolt or conduit symbol
+
+5. SCREENSHOT (For PWA)
+   - screenshot1.png (1280x720px)
+   - Screenshot of the calculator in use
+   - Shows the main interface
+
+6. LOGO (Optional but recommended)
+   - logo.png (transparent background, 400x100px)
+   - logo-small.png (100x100px)
+   - Use in header if desired
+
+DESIGN GUIDELINES:
+- Primary color: #2563eb (blue)
+- Secondary color: #764ba2 (purple)
+- Use professional, modern design
+- Ensure readability and contrast
+- Keep it simple and recognizable
+
+TOOLS TO CREATE IMAGES:
+- Canva.com (free, easy to use)
+- Figma (professional design tool)
+- GIMP (free Photoshop alternative)
+- Photopea.com (online Photoshop alternative)
+- Favicon.io (for favicon generation)
+
+IMAGE OPTIMIZATION:
+- Compress images using TinyPNG.com or Squoosh.app
+- Use WebP format for better compression (optional)
+- Ensure images are under 200KB for fast loading
+
+WHERE TO ADD IMAGES:
+1. Add favicon link in all HTML files <head>:
+   <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+2. OG image is already referenced in index.html meta tags
+   Just create the image and place it in root directory
+
+3. PWA icons are referenced in manifest.json
+   Create and place in root directory
+
+PRIORITY:
+1. High: og-image.jpg (for social sharing)
+2. High: favicon.ico (for browser tab)
+3. Medium: PWA icons (for mobile users)
+4. Low: Logo (nice to have)
+
+Note: The site will work fine without images, but they greatly improve:
+- Social media appearance
+- Brand recognition
+- SEO ranking
+- User trust
+- Professional appearance
+
