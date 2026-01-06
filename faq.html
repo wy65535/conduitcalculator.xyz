@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Conduit Fill Calculator Questions & Answers</title>
+    <meta name="description" content="Frequently asked questions about conduit fill calculations, NEC requirements, wire sizing, and electrical conduit installation. Get expert answers to your questions.">
+    <meta name="keywords" content="conduit fill FAQ, NEC questions, wire fill answers, conduit sizing help, electrical calculator FAQ">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://conduitcalculator.xyz/faq.html">
+    
+    <!-- FAQ Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [{
+            "@type": "Question",
+            "name": "What is conduit fill?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Conduit fill refers to the percentage of a conduit's cross-sectional area that is occupied by electrical wires and cables. The NEC establishes maximum fill percentages: 53% for 1 conductor, 31% for 2 conductors, and 40% for 3 or more conductors."
+            }
+        }, {
+            "@type": "Question",
+            "name": "How do I calculate conduit fill percentage?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "To calculate conduit fill percentage: 1) Find the total cross-sectional area of all wires (including insulation), 2) Find the internal cross-sectional area of the conduit, 3) Divide wire area by conduit area and multiply by 100 to get the percentage."
+            }
+        }, {
+            "@type": "Question",
+            "name": "What are the NEC conduit fill limits?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "According to NEC Chapter 9 Table 1: 1 conductor = 53% maximum fill, 2 conductors = 31% maximum fill, 3 or more conductors = 40% maximum fill."
+            }
+        }]
+    }
+    </script>
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#2563eb">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        .faq-item {
+            background: white;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #1f2937;
+            transition: background 0.3s;
+        }
+        
+        .faq-question:hover {
+            background: #f9fafb;
+        }
+        
+        .faq-question::after {
+            content: '▼';
+            font-size: 0.8rem;
+            color: #2563eb;
+            transition: transform 0.3s;
+        }
+        
+        .faq-item.active .faq-question::after {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            padding: 0 1.5rem;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 1000px;
+            padding: 0 1.5rem 1.5rem;
+        }
+        
+        .faq-category {
+            margin-bottom: 3rem;
+        }
+        
+        .faq-category h2 {
+            color: #2563eb;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #2563eb;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>⚡ Conduit Fill Calculator</h1>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Calculator</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="faq.html" class="active">FAQ</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <p>Find answers to common questions about conduit fill calculations</p>
+        </div>
+    </section>
+
+    <main class="main-content" style="background: white;">
+        <div class="container" style="max-width: 1000px;">
+            <div style="padding: 3rem 0;">
+
+                <!-- General Questions -->
+                <div class="faq-category">
+                    <h2>📋 General Questions</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            What is conduit fill and why is it important?
+                        </div>
+                        <div class="faq-answer">
+                            <p>Conduit fill refers to the percentage of a conduit's internal cross-sectional area that is occupied by electrical wires and cables. It's important for several reasons:</p>
+                            <ul style="margin-left: 2rem; margin-top: 0.5rem;">
+                                <li><strong>Heat Dissipation:</strong> Proper spacing allows heat generated by current flow to dissipate safely</li>
+                                <li><strong>Installation Ease:</strong> Overfilled conduits make wire pulling difficult or impossible</li>
+                                <li><strong>Wire Protection:</strong> Adequate space prevents wire insulation damage during installation</li>
+                                <li><strong>Code Compliance:</strong> NEC requirements ensure safe electrical installations</li>
+                                <li><strong>Future Expansion:</strong> Proper sizing allows for potential circuit additions</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            How do I use this conduit fill calculator?
+                        </div>
+                        <div class="faq-answer">
+                            <p>Using our calculator is simple:</p>
+                            <ol style="margin-left: 2rem; margin-top: 0.5rem;">
+                                <li>Select your conduit type (EMT, PVC, RMC, etc.)</li>
+                                <li>Choose the conduit size</li>
+                                <li>Add wires by selecting wire type, size (AWG), and quantity</li>
+                                <li>Click "Add Wire" to add to your configuration</li>
+                                <li>Repeat for all wires in your installation</li>
+                                <li>Click "Calculate Fill" to see results</li>
+                            </ol>
+                            <p style="margin-top: 1rem;">The calculator will show you the fill percentage, whether it's NEC compliant, and provide recommendations.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            Is this calculator free to use?
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes! Our conduit fill calculator is completely free to use. There are no subscriptions, no registration required, and no hidden fees. We support the service through non-intrusive advertisements to keep it free for everyone.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            Do I need to create an account?
+                        </div>
+                        <div class="faq-answer">
+                            <p>No account is required. The calculator works entirely in your browser, and your configurations are automatically saved in your browser's local storage. This means your data stays private and on your device.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEC Requirements -->
+                <div class="faq-category">
+                    <h2>📖 NEC Requirements & Standards</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            What are the NEC conduit fill percentages?
+                        </div>
+                        <div class="faq-answer">
+                            <p>According to NEC Chapter 9, Table 1, the maximum conduit fill percentages are:</p>
+                            <ul style="margin-left: 2rem; margin-top: 0.5rem;">
+                                <li><strong>1 conductor:</strong> 53% maximum fill</li>
+                                <li><strong>2 conductors:</strong> 31% maximum fill</li>
+                                <li><strong>3 or more conductors:</strong> 40% maximum fill</li>
+                            </ul>
+                            <p style="margin-top: 1rem;">These percentages ensure proper heat dissipation and ease of installation while protecting wire insulation.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            Why is the fill percentage different for 1, 2, and 3+ conductors?
+                        </div>
+                        <div class="faq-answer">
+                            <p>The varying percentages are based on:</p>
+                            <ul style="margin-left: 2rem; margin-top: 0.5rem;">
+                                <li><strong>Heat Generation:</strong> More conductors generate more heat, requiring more space</li>
+                                <li><strong>Installation Difficulty:</strong> Pulling multiple wires through tight spaces increases friction and difficulty</li>
+                                <li><strong>Wire Arrangement:</strong> Two wires can fit more efficiently than three or more</li>
+                                <li><strong>Safety Margins:</strong> Lower percentages for multiple wires provide additional safety</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            Does the ground wire count toward conduit fill?
+                        </div>
+                        <div class="faq-answer">
+                            <p><strong>Yes!</strong> Ground wires (equipment grounding conductors) must be included in conduit fill calculations. They occupy physical space in the conduit just like current-carrying conductors.</p>
+                            <p style="margin-top: 1rem;"><em>Note: However, ground wires are NOT counted as current-carrying conductors for ampacity derating purposes.</em></p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            What NEC tables are used for conduit fill calculations?
+                        </div>
+                        <div class="faq-answer">
+                            <p>Our calculator uses the following NEC Chapter 9 tables:</p>
+                            <ul style="margin-left: 2rem; margin-top: 0.5rem;">
+                                <li><strong>Table 1:</strong> Percentage of cross section of conduit and tubing for conductors</li>
+                                <li><strong>Table 4:</strong> Dimensions and percent area of conduit and tubing (internal areas)</li>
+                                <li><strong>Table 5:</strong> Dimensions of insulated conductors and fixture wires (wire areas)</li>
+                                <li><strong>Article 310.15(C)(1):</strong> Ampacity derating adjustment factors</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            Is this calculator based on NEC 2024?
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, our calculator is based on NEC 2024 standards. While conduit fill tables don't change frequently between NEC editions, we keep our calculator updated with the latest code requirements.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Calculation Questions -->
+                <div class="faq-category">
+                    <h2>🔢 Calculation Questions</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            How do I calculate conduit fill manually?
+                        </div>
+                        <div class="faq-answer">
+                            <p>To manually calculate conduit fill:</p>
+                            <ol style="margin-left: 2rem; margin-top: 0.5rem;">
+                                <li>Look up each wire's cross-sectional area in NEC Chapter 9, Table 5 (includes insulation)</li>
+                                <li>Multiply each wire area by the quantity of that wire</li>
+                                <li>Add all wire areas together to get total wire area</li>
+                                <li>Look up conduit internal area in NEC Chapter 9, Table 4</li>
+                                <li>Divide total wire area by conduit area and multiply by 100</li>
+                                <li>Compare result to NEC Table 1 maximum fill percentages</li>
+                            </ol>
+                            <p style="margin-top: 1rem;"><strong>Example:</strong> Three 12 AWG THHN wires (0.0133 sq.in each) in ½" EMT (0.304 sq.in):<br>
+                            (3 × 0.0133) / 0.304 × 100 = 13.1% (Well below 40% limit)</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            Can I mix different wire sizes in the same conduit?
+                        </div>
+                        <div class="faq-answer">
+                            <p><strong>Yes!</strong> You can run different wire sizes in the same conduit. Our calculator supports this by allowing you to add multiple wire entries of different sizes. Just add each wire type and size separately, and the calculator will sum all areas for total fill.</p>
+                            <p style="margin-top: 1rem;">Common example: Running 12 AWG branch circuits with 10 AWG equipment ground in the same conduit.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            Can I mix different wire types (THHN, XHHW, etc.) in one conduit?
+                        </div>
+                        <div class="faq-answer">
+                            <p><strong>Yes!</strong> Different wire types can be installed in the same conduit, as long as:</p>
+                            <ul style="margin-left: 2rem; margin-top: 0.5rem;">
+                                <li>All wires are rated for the operating voltage</li>
+                                <li>All wires are suitable for the installation location (wet/dry)</li>
+                                <li>Total fill doesn't exceed NEC limits</li>
+                                <li>Temperature ratings are appropriate for the application</li>
+                            </ul>
+                            <p style="margin-top: 1rem;">Use our calculator by adding each wire type separately with its quantity.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            What's the difference between AWG and kcmil?
+                        </div>
+                        <div class="faq-answer">
+                            <p><strong>AWG (American Wire Gauge):</strong> Used for smaller wire sizes. Numbers decrease as wire size increases (14 AWG is smaller than 10 AWG). Goes from 14 AWG down to 4/0 AWG.</p>
+                            <p style="margin-top: 1rem;"><strong>kcmil (thousand circular mils):</strong> Used for larger wire sizes, starting at 250 kcmil and going up to 2000 kcmil or more. Larger numbers mean larger wire.</p>
+                            <p style="margin-top: 1rem;">Our calculator supports both sizing systems for comprehensive coverage.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            Does the calculator include wire insulation?
+                        </div>
+                        <div class="faq-answer">
+                            <p><strong>Yes!</strong> All wire areas in our calculator include insulation thickness. This is crucial because NEC requires you to use the overall wire diameter (including insulation), not just the bare conductor size.</p>
+                            <p style="margin-top: 1rem;">This is why different insulation types (THHN vs RHH) have different cross-sectional areas even for the same AWG size.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Conduit Types -->
+                <div class="faq-category">
+                    <h2>🔧 Conduit Types & Selection</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            What's the difference between EMT, RMC, and IMC?
+                        </div>
+                        <div class="faq-answer">
+                            <p><strong>EMT (Electrical Metallic Tubing):</strong></p>
+                            <ul style="margin-left: 2rem;">
+                                <li>Lightweight, thin-walled steel conduit</li>
+                                <li>Most common for indoor commercial/residential</li>
+                                <li>Cannot be threaded, uses compression/set-screw fittings</li>
+                                <li>Not suitable for direct burial in concrete</li>
+                            </ul>
+                            <p style="margin-top: 1rem;"><strong>RMC (Rigid Metal Conduit):</strong></p>
+                            <ul style="margin-left: 2rem;">
+                                <li>Heavy-duty, thick-walled steel conduit</li>
+                                <li>Can be threaded for secure connections</li>
+                                <li>Suitable for outdoor, underground, and concrete encasement</li>
+                                <li>Highest level of physical protection</li>
+                            </ul>
+                            <p style="margin-top: 1rem;"><strong>IMC (Intermediate Metal Conduit):</strong></p>
+                            <ul style="margin-left: 2rem;">
+                                <li>Between EMT and RMC in wall thickness</li>
+                                <li>Can be threaded</li>
+                                <li>Lighter than RMC but stronger than EMT</li>
+                                <li>Good for outdoor commercial applications</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            What's the difference between PVC Schedule 40 and Schedule 80?
+                        </div>
+                        <div class="faq-answer">
+                            <p><strong>Schedule 40:</strong></p>
+                            <ul style="margin-left: 2rem;">
+                                <li>Thinner walls, larger internal diameter</li>
+                                <li>Suitable for most underground applications</li>
+                                <li>Lower cost</li>
+                                <li>Gray in color</li>
+                            </ul>
+                            <p style="margin-top: 1rem;"><strong>Schedule 80:</strong></p>
+                            <ul style="margin-left: 2rem;">
+                                <li>Thicker walls, smaller internal diameter</li>
+                                <li>Higher impact resistance</li>
+                                <li>Required for areas with high physical damage risk</li>
+                                <li>Often gray or white</li>
+                            </ul>
+                            <p style="margin-top: 1rem;"><em>Note: Schedule 80 has smaller internal area, so fewer wires fit compared to Schedule 40 of the same nominal size.</em></p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            When should I use flexible conduit (FMC or LFMC)?
+                        </div>
+                        <div class="faq-answer">
+                            <p><strong>FMC (Flexible Metal Conduit):</strong></p>
+                            <ul style="margin-left: 2rem;">
+                                <li>Motor connections requiring vibration isolation</li>
+                                <li>Complex routing in tight spaces</li>
+                                <li>Areas requiring movement or flexibility</li>
+                                <li>Dry locations only</li>
+                            </ul>
+                            <p style="margin-top: 1rem;"><strong>LFMC (Liquidtight Flexible Metal Conduit):</strong></p>
+                            <ul style="margin-left: 2rem;">
+                                <li>Outdoor equipment connections</li>
+                                <li>Wet or damp locations</li>
+                                <li>Areas exposed to water or chemicals</li>
+                                <li>HVAC unit connections</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            How do I choose the right conduit size?
+                        </div>
+                        <div class="faq-answer">
+                            <p>Follow these steps:</p>
+                            <ol style="margin-left: 2rem; margin-top: 0.5rem;">
+                                <li>Count all conductors including grounds</li>
+                                <li>Use our calculator to test different conduit sizes</li>
+                                <li>Ensure fill percentage is below NEC limits</li>
+                                <li>Consider sizing up if near the limit for easier installation</li>
+                                <li>Account for future expansion if applicable</li>
+                                <li>Consider wire pulling distance (longer runs may need larger conduit)</li>
+                            </ol>
+                            <p style="margin-top: 1rem;"><strong>Pro Tip:</strong> Stay below 80% of the NEC maximum for easier installation.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wire Types -->
+                <div class="faq-category">
+                    <h2>🔌 Wire Types & Specifications</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            What's the difference between THHN and THWN?
+                        </div>
+                        <div class="faq-answer">
+                            <p><strong>THHN:</strong> Thermoplastic High Heat-resistant Nylon-coated. Rated for 90°C (194°F) in dry locations.</p>
+                            <p style="margin-top: 1rem;"><strong>THWN:</strong> Thermoplastic Heat and Water-resistant Nylon-coated. Rated for 75°C (167°F) in wet locations and 90°C in dry locations.</p>
+                            <p style="margin-top: 1rem;"><strong>THHN/THWN:</strong> Most common wire is dual-rated THHN/THWN, meaning it can be used in both wet and dry locations. This is the most versatile option and what most electricians use.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            What wire type should I use for my application?
+                        </div>
+                        <div class="faq-answer">
+                            <p><strong>General Purpose (Most Common):</strong> THHN/THWN - Works for almost all applications</p>
+                            <p style="margin-top: 1rem;"><strong>Wet Locations:</strong> THWN-2, XHHW-2, RHW-2 - Full 90°C rating in wet conditions</p>
+                            <p style="margin-top: 1rem;"><strong>Underground/Direct Burial:</strong> USE-2, RHW-2 - Moisture and earth-resistant</p>
+                            <p style="margin-top: 1rem;"><strong>High Temperature:</strong> XHHW, XHHW-2 - Excellent for hot environments</p>
+                            <p style="margin-top: 1rem;"><strong>Solar Installations:</strong> USE-2 - UV and moisture resistant</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            What does the wire temperature rating mean?
+                        </div>
+                        <div class="faq-answer">
+                            <p>The temperature rating (60°C, 75°C, 90°C) indicates the maximum temperature the wire insulation can safely withstand during continuous operation.</p>
+                            <p style="margin-top: 1rem;"><strong>Important:</strong> While modern wire is often 90°C rated, you must use the 75°C ampacity column in most cases because:</p>
+                            <ul style="margin-left: 2rem; margin-top: 0.5rem;">
+                                <li>Terminals and equipment are typically rated for 75°C</li>
+                                <li>NEC requires matching terminal ratings</li>
+                                <li>90°C ratings are only used for derating calculations</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Installation & Practical -->
+                <div class="faq-category">
+                    <h2>🛠️ Installation & Practical Questions</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            What if my calculation shows I'm over the NEC limit?
+                        </div>
+                        <div class="faq-answer">
+                            <p>If you exceed the NEC fill limit, you have several options:</p>
+                            <ol style="margin-left: 2rem; margin-top: 0.5rem;">
+                                <li><strong>Use a larger conduit:</strong> Simplest solution, move up to the next size</li>
+                                <li><strong>Run multiple conduits:</strong> Split wires into two or more conduits</li>
+                                <li><strong>Reduce wire count:</strong> Combine circuits if possible</li>
+                                <li><strong>Use smaller wire gauge:</strong> Only if load requirements permit</li>
+                                <li><strong>Use different wire type:</strong> Some insulation types are thinner</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            Should I fill conduit to the maximum allowed?
+                        </div>
+                        <div class="faq-answer">
+                            <p><strong>Not recommended.</strong> While NEC allows certain maximum fill percentages, staying below these limits makes installation easier:</p>
+                            <ul style="margin-left: 2rem; margin-top: 0.5rem;">
+                                <li><strong>Easier wire pulling:</strong> Less friction and binding</li>
+                                <li><strong>Less wire damage:</strong> Reduced insulation scraping</li>
+                                <li><strong>Better heat dissipation:</strong> More air circulation</li>
+                                <li><strong>Future expansion:</strong> Room to add wires if needed</li>
+                            </ul>
+                            <p style="margin-top: 1rem;"><strong>Best Practice:</strong> Target 70-80% of maximum fill for optimal installation.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            What is ampacity derating and when is it required?
+                        </div>
+                        <div class="faq-answer">
+                            <p>Ampacity derating reduces the current-carrying capacity of wires when more than 3 current-carrying conductors are in the same conduit. This is required because bundled wires generate more heat.</p>
+                            <p style="margin-top: 1rem;"><strong>Derating Factors (NEC 310.15(C)(1)):</strong></p>
+                            <ul style="margin-left: 2rem;">
+                                <li>4-6 conductors: 80% of rated ampacity</li>
+                                <li>7-9 conductors: 70% of rated ampacity</li>
+                                <li>10-20 conductors: 50% of rated ampacity</li>
+                                <li>21-30 conductors: 45% of rated ampacity</li>
+                                <li>31-40 conductors: 40% of rated ampacity</li>
+                                <li>41+ conductors: 35% of rated ampacity</li>
+                            </ul>
+                            <p style="margin-top: 1rem;"><em>Note: Grounds and neutrals carrying only unbalanced current don't count as current-carrying conductors.</em></p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            How long can a conduit run be before I need a pull box?
+                        </div>
+                        <div class="faq-answer">
+                            <p>NEC doesn't specify a maximum length, but provides guidelines:</p>
+                            <ul style="margin-left: 2rem; margin-top: 0.5rem;">
+                                <li>No more than 360° of bends (equivalent to four 90° bends) between pull points</li>
+                                <li>Practical limit is often 100 feet for easier wire pulling</li>
+                                <li>Longer runs or more bends require pull boxes or junction boxes</li>
+                                <li>Use larger conduit for very long runs (>100 feet) to reduce friction</li>
+                                <li>Apply pulling lubricant for difficult pulls</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            Can I run low voltage and line voltage in the same conduit?
+                        </div>
+                        <div class="faq-answer">
+                            <p><strong>Generally NO.</strong> NEC Article 725 prohibits mixing Class 1, 2, or 3 circuits (low voltage) with power circuits (line voltage) in the same raceway unless specific conditions are met.</p>
+                            <p style="margin-top: 1rem;"><strong>Exceptions:</strong></p>
+                            <ul style="margin-left: 2rem;">
+                                <li>Control circuits integral to the equipment being controlled</li>
+                                <li>Class 2/3 circuits in same enclosure as power supply</li>
+                                <li>When all conductors are rated for the highest voltage present</li>
+                            </ul>
+                            <p style="margin-top: 1rem;"><strong>Best Practice:</strong> Run separate conduits for low voltage and line voltage to avoid code violations and electrical interference.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technical & Advanced -->
+                <div class="faq-category">
+                    <h2>⚙️ Technical & Advanced Questions</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            How accurate is this calculator?
+                        </div>
+                        <div class="faq-answer">
+                            <p>Our calculator uses official NEC Chapter 9 tables for all conduit and wire dimensions. The calculations are mathematically accurate based on these standardized values.</p>
+                            <p style="margin-top: 1rem;"><strong>However:</strong> Always verify with local codes and consult a licensed electrician for actual installations. Manufacturing tolerances, installation conditions, and local amendments may affect real-world applications.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            Does this work for metric conduit sizes?
+                        </div>
+                        <div class="faq-answer">
+                            <p>Our calculator is based on U.S. NEC standards which use imperial measurements (inches). However, we provide a metric conversion option that displays results in square millimeters.</p>
+                            <p style="margin-top: 1rem;">For countries using metric conduit standards (IEC), dimensions and fill requirements may differ. Always check local electrical codes and standards.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            Can I save my calculations?
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes! Your wire configurations are automatically saved in your browser's local storage. This means if you accidentally close the page or navigate away, your data will still be there when you return.</p>
+                            <p style="margin-top: 1rem;"><strong>Note:</strong> Data is saved locally on your device and is not uploaded to our servers. If you clear your browser data, your saved calculations will be deleted.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            Does this calculator work offline?
+                        </div>
+                        <div class="faq-answer">
+                            <p>After the initial page load, all calculations happen in your browser using JavaScript. However, you need an internet connection to initially load the page and see advertisements.</p>
+                            <p style="margin-top: 1rem;">Once loaded, the calculator will continue to work even if you temporarily lose connection.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            Why are there different percentages for different conductor counts?
+                        </div>
+                        <div class="faq-answer">
+                            <p>The NEC reduces maximum fill percentage as conductor count increases due to:</p>
+                            <ul style="margin-left: 2rem; margin-top: 0.5rem;">
+                                <li><strong>Heat accumulation:</strong> More wires generate more heat that must dissipate</li>
+                                <li><strong>Physical arrangement:</strong> Multiple wires pack less efficiently than one or two</li>
+                                <li><strong>Installation difficulty:</strong> More wires create more friction during pulling</li>
+                                <li><strong>Safety margins:</strong> Conservative limits prevent overheating and damage</li>
+                            </ul>
+                            <p style="margin-top: 1rem;">These percentages have been refined over decades of electrical installation experience and testing.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Troubleshooting -->
+                <div class="faq-category">
+                    <h2>🔍 Troubleshooting</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            The calculator isn't working. What should I do?
+                        </div>
+                        <div class="faq-answer">
+                            <p>Try these troubleshooting steps:</p>
+                            <ol style="margin-left: 2rem; margin-top: 0.5rem;">
+                                <li>Refresh your browser (Ctrl+F5 or Cmd+Shift+R)</li>
+                                <li>Clear your browser cache and cookies</li>
+                                <li>Try a different browser (Chrome, Firefox, Safari, Edge)</li>
+                                <li>Disable browser extensions that might interfere</li>
+                                <li>Check that JavaScript is enabled in your browser</li>
+                                <li>Update your browser to the latest version</li>
+                            </ol>
+                            <p style="margin-top: 1rem;">If problems persist, contact us at support@conduitcalculator.xyz with details about your browser and the issue.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            I lost my saved calculations. Can I recover them?
+                        </div>
+                        <div class="faq-answer">
+                            <p>Unfortunately, if you cleared your browser data or local storage, saved calculations cannot be recovered. Data is stored locally on your device and we don't have access to it.</p>
+                            <p style="margin-top: 1rem;"><strong>Prevention Tips:</strong></p>
+                            <ul style="margin-left: 2rem;">
+                                <li>Take screenshots of important calculations</li>
+                                <li>Write down wire configurations for critical projects</li>
+                                <li>Use your browser's bookmark feature to save the page</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Still Have Questions -->
+                <section style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 2rem; border-radius: 8px; text-align: center; margin-top: 3rem;">
+                    <h2 style="margin-bottom: 1rem; color: white;">Still Have Questions?</h2>
+                    <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">Can't find what you're looking for? Contact us for help!</p>
+                    <p><strong>Email:</strong> support@conduitcalculator.xyz</p>
+                    <p style="margin-top: 1rem;">We typically respond within 24-48 hours.</p>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About This Tool</h4>
+                    <p>Free professional conduit fill calculator based on NEC 2024 standards.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Calculator</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="index.html#nec-standards">NEC Standards</a></li>
+                        <li><a href="index.html#wire-sizing">Wire Sizing</a></li>
+                        <li><a href="index.html#conduit-types">Conduit Types</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <p>Email: support@conduitcalculator.xyz</p>
+                    <p>We're here to help!</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ConduitCalculator.xyz - All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            const allFaqItems = document.querySelectorAll('.faq-item');
+            
+            // Close all other FAQ items
+            allFaqItems.forEach(item => {
+                if (item !== faqItem && item.classList.contains('active')) {
+                    item.classList.remove('active');
+                }
+            });
+            
+            // Toggle current item
+            faqItem.classList.toggle('active');
+        }
+
+        // Open first FAQ item by default
+        document.addEventListener('DOMContentLoaded', function() {
+            const firstFaq = document.querySelector('.faq-item');
+            if (firstFaq) {
+                firstFaq.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>
+
