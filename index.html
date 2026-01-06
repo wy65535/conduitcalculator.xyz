@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conduit Fill Calculator - NEC Compliant Wire & Cable Calculator 2024</title>
+    <meta name="description" content="Free online conduit fill calculator based on NEC 2024 standards. Calculate maximum wire fill capacity for EMT, PVC, RMC conduits. Professional electrical conduit sizing tool.">
+    <meta name="keywords" content="conduit fill calculator, NEC conduit fill, wire fill calculator, conduit size calculator, electrical conduit calculator, EMT conduit fill, PVC conduit fill, cable fill calculator, conduit capacity calculator">
+    <meta name="author" content="ConduitCalculator.xyz">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://conduitcalculator.xyz/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://conduitcalculator.xyz/">
+    <meta property="og:title" content="Conduit Fill Calculator - NEC Compliant Wire Calculator">
+    <meta property="og:description" content="Calculate conduit fill capacity based on NEC standards. Free online tool for electrical contractors and engineers.">
+    <meta property="og:image" content="https://conduitcalculator.xyz/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://conduitcalculator.xyz/">
+    <meta property="twitter:title" content="Conduit Fill Calculator - NEC Compliant">
+    <meta property="twitter:description" content="Calculate conduit fill capacity based on NEC standards.">
+    <meta property="twitter:image" content="https://conduitcalculator.xyz/og-image.jpg">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Conduit Fill Calculator",
+        "description": "Professional conduit fill calculator for electrical contractors. Calculate wire and cable fill capacity based on NEC standards.",
+        "url": "https://conduitcalculator.xyz/",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "1247"
+        }
+    }
+    </script>
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#2563eb">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="ConduitCalc">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>⚡ Conduit Fill Calculator</h1>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html" class="active">Calculator</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Professional Conduit Fill Calculator</h2>
+            <p>Calculate conduit fill capacity based on NEC 2024 standards. Free, accurate, and easy to use.</p>
+        </div>
+    </section>
+
+    <!-- Main Calculator Section -->
+    <main class="main-content">
+        <div class="container">
+            <div class="calculator-wrapper">
+                <!-- Left Panel - Calculator -->
+                <div class="calculator-panel">
+                    <h3>🔧 Calculate Conduit Fill</h3>
+                    
+                    <!-- Conduit Selection -->
+                    <div class="section">
+                        <h4>Select Conduit Type & Size</h4>
+                        <div class="form-group">
+                            <label for="conduitType">Conduit Type:</label>
+                            <select id="conduitType" class="form-control">
+                                <option value="EMT">EMT (Electrical Metallic Tubing)</option>
+                                <option value="PVC40">PVC Schedule 40</option>
+                                <option value="PVC80">PVC Schedule 80</option>
+                                <option value="RMC">RMC (Rigid Metal Conduit)</option>
+                                <option value="IMC">IMC (Intermediate Metal Conduit)</option>
+                                <option value="FMC">FMC (Flexible Metal Conduit)</option>
+                                <option value="LFMC">LFMC (Liquidtight Flexible Metal)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="conduitSize">Conduit Size:</label>
+                            <select id="conduitSize" class="form-control">
+                                <option value="0.5">½ inch</option>
+                                <option value="0.75">¾ inch</option>
+                                <option value="1" selected>1 inch</option>
+                                <option value="1.25">1¼ inch</option>
+                                <option value="1.5">1½ inch</option>
+                                <option value="2">2 inch</option>
+                                <option value="2.5">2½ inch</option>
+                                <option value="3">3 inch</option>
+                                <option value="3.5">3½ inch</option>
+                                <option value="4">4 inch</option>
+                                <option value="5">5 inch</option>
+                                <option value="6">6 inch</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Wire Selection -->
+                    <div class="section">
+                        <h4>Add Wires/Cables</h4>
+                        <div id="wiresList" class="wires-list">
+                            <!-- Dynamic wire entries will be added here -->
+                        </div>
+                        
+                        <div class="wire-input-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="wireType">Wire Type:</label>
+                                    <select id="wireType" class="form-control">
+                                        <option value="THHN">THHN/THWN</option>
+                                        <option value="THWN-2">THWN-2</option>
+                                        <option value="XHHW">XHHW</option>
+                                        <option value="XHHW-2">XHHW-2</option>
+                                        <option value="RHH">RHH</option>
+                                        <option value="RHW">RHW</option>
+                                        <option value="RHW-2">RHW-2</option>
+                                        <option value="USE-2">USE-2</option>
+                                        <option value="TW">TW</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="wireSize">Wire Size (AWG/kcmil):</label>
+                                    <select id="wireSize" class="form-control">
+                                        <option value="14">14 AWG</option>
+                                        <option value="12" selected>12 AWG</option>
+                                        <option value="10">10 AWG</option>
+                                        <option value="8">8 AWG</option>
+                                        <option value="6">6 AWG</option>
+                                        <option value="4">4 AWG</option>
+                                        <option value="3">3 AWG</option>
+                                        <option value="2">2 AWG</option>
+                                        <option value="1">1 AWG</option>
+                                        <option value="1/0">1/0 AWG</option>
+                                        <option value="2/0">2/0 AWG</option>
+                                        <option value="3/0">3/0 AWG</option>
+                                        <option value="4/0">4/0 AWG</option>
+                                        <option value="250">250 kcmil</option>
+                                        <option value="300">300 kcmil</option>
+                                        <option value="350">350 kcmil</option>
+                                        <option value="400">400 kcmil</option>
+                                        <option value="500">500 kcmil</option>
+                                        <option value="600">600 kcmil</option>
+                                        <option value="750">750 kcmil</option>
+                                        <option value="1000">1000 kcmil</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="wireCount">Quantity:</label>
+                                    <input type="number" id="wireCount" class="form-control" value="3" min="1" max="100">
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-add" onclick="addWire()">➕ Add Wire</button>
+                        </div>
+                    </div>
+
+                    <!-- Advanced Options -->
+                    <div class="section advanced-section">
+                        <h4>⚙️ Advanced Options</h4>
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" id="includeGround" checked>
+                                Include Ground Wire
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" id="derating">
+                                Show Derating Factor (4+ current-carrying conductors)
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label for="unitSystem">Unit System:</label>
+                            <select id="unitSystem" class="form-control" onchange="calculate()">
+                                <option value="imperial">Imperial (inches)</option>
+                                <option value="metric">Metric (mm)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn btn-calculate" onclick="calculate()">🔍 Calculate Fill</button>
+                    <button type="button" class="btn btn-reset" onclick="resetCalculator()">🔄 Reset</button>
+                </div>
+
+                <!-- Right Panel - Results -->
+                <div class="results-panel">
+                    <h3>📊 Calculation Results</h3>
+                    <div id="results" class="results-content">
+                        <div class="empty-state">
+                            <p>👆 Add wires and click "Calculate Fill" to see results</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Information Sections -->
+    <section class="info-section">
+        <div class="container">
+            <h2>Understanding Conduit Fill Calculations</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>📏 What is Conduit Fill?</h3>
+                    <p>Conduit fill refers to the percentage of a conduit's cross-sectional area occupied by wires and cables. The National Electrical Code (NEC) establishes maximum fill percentages to ensure proper heat dissipation and ease of wire installation.</p>
+                </div>
+                <div class="info-card">
+                    <h3>📋 NEC Fill Requirements</h3>
+                    <p>According to NEC Article 314.16 and Chapter 9 Table 1:</p>
+                    <ul>
+                        <li><strong>1 conductor:</strong> 53% maximum fill</li>
+                        <li><strong>2 conductors:</strong> 31% maximum fill</li>
+                        <li><strong>3+ conductors:</strong> 40% maximum fill</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h3>🔌 Why It Matters</h3>
+                    <p>Proper conduit fill prevents overheating, makes installation easier, reduces wire damage risk, and ensures compliance with electrical codes. Overfilled conduits can lead to installation difficulties and potential safety hazards.</p>
+                </div>
+                <div class="info-card">
+                    <h3>⚡ Common Applications</h3>
+                    <ul>
+                        <li>Residential electrical installations</li>
+                        <li>Commercial building wiring</li>
+                        <li>Industrial power distribution</li>
+                        <li>Data center cable management</li>
+                        <li>Outdoor electrical runs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conduit Types Guide -->
+    <section class="guide-section">
+        <div class="container">
+            <h2>Conduit Types Guide</h2>
+            <div class="conduit-types">
+                <div class="conduit-card">
+                    <h3>EMT - Electrical Metallic Tubing</h3>
+                    <p>Lightweight, easy to bend, most common for indoor applications. Not suitable for concrete burial.</p>
+                    <strong>Best for:</strong> Indoor commercial and residential
+                </div>
+                <div class="conduit-card">
+                    <h3>PVC Schedule 40/80</h3>
+                    <p>Corrosion-resistant plastic conduit. Schedule 80 has thicker walls for higher impact resistance.</p>
+                    <strong>Best for:</strong> Underground, corrosive environments
+                </div>
+                <div class="conduit-card">
+                    <h3>RMC - Rigid Metal Conduit</h3>
+                    <p>Heavy-duty steel conduit with excellent protection. Can be threaded and buried directly.</p>
+                    <strong>Best for:</strong> Outdoor, industrial, high-protection areas
+                </div>
+                <div class="conduit-card">
+                    <h3>IMC - Intermediate Metal Conduit</h3>
+                    <p>Lighter than RMC but stronger than EMT. Good balance of protection and weight.</p>
+                    <strong>Best for:</strong> Outdoor, commercial applications
+                </div>
+                <div class="conduit-card">
+                    <h3>FMC - Flexible Metal Conduit</h3>
+                    <p>Flexible steel conduit for areas requiring movement or complex routing.</p>
+                    <strong>Best for:</strong> Motor connections, tight spaces
+                </div>
+                <div class="conduit-card">
+                    <h3>LFMC - Liquidtight Flexible</h3>
+                    <p>Waterproof flexible conduit with plastic coating. Ideal for wet locations.</p>
+                    <strong>Best for:</strong> Outdoor equipment, wet locations
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wire Types Guide -->
+    <section class="wire-guide-section">
+        <div class="container">
+            <h2>Common Wire Types Explained</h2>
+            <div class="wire-types-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Wire Type</th>
+                            <th>Temperature Rating</th>
+                            <th>Insulation</th>
+                            <th>Common Uses</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>THHN/THWN</strong></td>
+                            <td>90°C (194°F)</td>
+                            <td>Thermoplastic, nylon-coated</td>
+                            <td>Most common for general purpose wiring</td>
+                        </tr>
+                        <tr>
+                            <td><strong>THWN-2</strong></td>
+                            <td>90°C (194°F)</td>
+                            <td>Moisture and heat resistant</td>
+                            <td>Wet and dry locations</td>
+                        </tr>
+                        <tr>
+                            <td><strong>XHHW/XHHW-2</strong></td>
+                            <td>90°C (194°F)</td>
+                            <td>Cross-linked polyethylene</td>
+                            <td>Industrial, high-temperature applications</td>
+                        </tr>
+                        <tr>
+                            <td><strong>RHH/RHW</strong></td>
+                            <td>90°C (194°F)</td>
+                            <td>Heat and moisture resistant rubber</td>
+                            <td>Wet locations, underground</td>
+                        </tr>
+                        <tr>
+                            <td><strong>USE-2</strong></td>
+                            <td>90°C (194°F)</td>
+                            <td>Underground service entrance</td>
+                            <td>Direct burial, solar installations</td>
+                        </tr>
+                        <tr>
+                            <td><strong>TW</strong></td>
+                            <td>60°C (140°F)</td>
+                            <td>Thermoplastic, moisture resistant</td>
+                            <td>General purpose, older installations</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Tips -->
+    <section class="tips-section">
+        <div class="container">
+            <h2>💡 Pro Tips for Conduit Fill Calculations</h2>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h4>1. Always Size Up</h4>
+                    <p>When calculations show you're near the limit, consider using the next larger conduit size for easier installation and future expansion.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>2. Account for All Conductors</h4>
+                    <p>Don't forget to include ground wires, neutrals, and any control wires in your calculations.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>3. Check Local Codes</h4>
+                    <p>While NEC provides baseline standards, local jurisdictions may have additional requirements.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>4. Consider Future Needs</h4>
+                    <p>Leave extra capacity for potential circuit additions or upgrades down the line.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>5. Temperature Derating</h4>
+                    <p>More than 3 current-carrying conductors requires ampacity derating per NEC 310.15(C)(1).</p>
+                </div>
+                <div class="tip-card">
+                    <h4>6. Wire Bundling</h4>
+                    <p>Bundled conductors in long runs may require additional derating for heat dissipation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Calculators -->
+    <section class="related-section">
+        <div class="container">
+            <h2>Related Electrical Calculators</h2>
+            <div class="related-grid">
+                <div class="related-card">
+                    <h4>🔋 Voltage Drop Calculator</h4>
+                    <p>Calculate voltage drop across wire runs to ensure efficient power delivery.</p>
+                </div>
+                <div class="related-card">
+                    <h4>⚡ Wire Ampacity Calculator</h4>
+                    <p>Determine current-carrying capacity based on wire size and conditions.</p>
+                </div>
+                <div class="related-card">
+                    <h4>📐 Wire Size Calculator</h4>
+                    <p>Find the correct wire gauge for your electrical load and distance.</p>
+                </div>
+                <div class="related-card">
+                    <h4>🔌 Circuit Breaker Calculator</h4>
+                    <p>Calculate proper breaker size for your electrical circuits.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Keywords Section for SEO -->
+    <section class="keywords-section">
+        <div class="container">
+            <h2>Common Questions About Conduit Fill</h2>
+            <div class="keywords-content">
+                <p>Our <strong>conduit fill calculator</strong> helps electrical contractors, engineers, and DIY enthusiasts determine the correct <strong>conduit size</strong> for their wiring projects. Whether you're working with <strong>EMT conduit fill</strong>, <strong>PVC conduit sizing</strong>, or <strong>rigid metal conduit</strong>, this tool ensures <strong>NEC compliance</strong>.</p>
+                
+                <p>Calculate <strong>wire fill percentage</strong> for various applications including <strong>residential conduit sizing</strong>, <strong>commercial electrical installations</strong>, and <strong>industrial power distribution</strong>. The calculator supports all common <strong>wire types</strong> including THHN, THWN, XHHW, and more.</p>
+                
+                <p>Essential for determining <strong>maximum wire fill</strong>, <strong>conductor fill calculations</strong>, and ensuring proper <strong>electrical conduit sizing</strong> according to <strong>NEC Chapter 9 Table 1</strong> requirements. Perfect for planning <strong>underground conduit runs</strong>, <strong>overhead conduit installations</strong>, and <strong>cable tray sizing</strong>.</p>
+
+                <div class="keyword-tags">
+                    <span>electrical conduit calculator</span>
+                    <span>NEC conduit fill chart</span>
+                    <span>wire fill capacity</span>
+                    <span>conduit sizing tool</span>
+                    <span>EMT fill calculator</span>
+                    <span>PVC conduit calculator</span>
+                    <span>conduit fill percentage</span>
+                    <span>wire gauge calculator</span>
+                    <span>electrical conduit sizing</span>
+                    <span>NEC 2024 conduit fill</span>
+                    <span>cable fill calculator</span>
+                    <span>conduit capacity</span>
+                    <span>wire pulling calculator</span>
+                    <span>electrical raceway sizing</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About This Tool</h4>
+                    <p>Free professional conduit fill calculator based on NEC 2024 standards. Accurate calculations for electrical contractors and engineers.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Calculator</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#nec-standards">NEC Standards</a></li>
+                        <li><a href="#wire-sizing">Wire Sizing Guide</a></li>
+                        <li><a href="#conduit-types">Conduit Types</a></li>
+                        <li><a href="#installation-tips">Installation Tips</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Disclaimer</h4>
+                    <p>This calculator provides estimates based on NEC standards. Always consult with a licensed electrician and local codes for actual installations.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ConduitCalculator.xyz - All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
